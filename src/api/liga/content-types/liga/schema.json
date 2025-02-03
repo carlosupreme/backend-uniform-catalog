@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ligas",
+  "info": {
+    "singularName": "liga",
+    "pluralName": "ligas",
+    "displayName": "Liga"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "uniformes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::uniforme.uniforme",
+      "mappedBy": "liga"
+    }
+  }
+}

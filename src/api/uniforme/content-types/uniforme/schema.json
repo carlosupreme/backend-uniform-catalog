@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "uniformes",
+  "info": {
+    "singularName": "uniforme",
+    "pluralName": "uniformes",
+    "displayName": "Uniforme"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "modelo": {
+      "type": "string",
+      "required": true
+    },
+    "clave": {
+      "type": "string",
+      "required": true
+    },
+    "disponibles": {
+      "type": "integer",
+      "default": 1
+    },
+    "fotos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "liga": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::liga.liga",
+      "inversedBy": "uniformes"
+    },
+    "categoria": {
+      "type": "string",
+      "default": "hombre",
+      "required": true
+    }
+  }
+}
